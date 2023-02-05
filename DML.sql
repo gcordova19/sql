@@ -1,0 +1,3 @@
+select mo.nombre_modelo,  ma.nombre_marca, ge.nombre_empresa , c.dt_compra, c.matricula , tc.name_color , c.km_total , ta.nombre_aseguradora, ta.numero_poliza, te.nombre_estado 
+from prueba_dll.type_estado te, prueba_dll.coches c, prueba_dll.grupo_empresas ge , prueba_dll.marcas_coches ma , prueba_dll.modelos_coches mo, prueba_dll.type_color tc , prueba_dll.type_aseguradora ta 
+where ge.id_grupoempresas = ma.id_grupoempresas and ma.id_marca =mo.id_marca and mo.id_modelo = c.id_modelo and tc.id_color  = c.id_color and ta.id_aseguradora =c.id_aseguradora  and te.id_estado = c.id_estado and c.id_estado = '1';
